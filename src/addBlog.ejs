@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/easymde/dist/easymde.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- including header -->
+    <%- include('./layouts/header.ejs') %>
+    <div class="p-8">
+      <div class="max-w-2xl mx-auto bg-gray-100 p-6 rounded-md shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Create a Blog Post</h2>
+        <form
+          action="/blog/postBlog"
+          id="create_post_form"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- inportant fields -->
+          <div class="">
+            <!-- blog cover  -->
+            <div class="relative inline-block">
+              <button
+                type="button"
+                class="text-gray-900 border-2 border-gray-200 focus:ring-2 focus:outline-none focus:ring-gray-100 font-medium rounded-md text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                onclick="document.getElementById('fileInput').click();"
+              >
+                Add a cover image
+              </button>
+              <input
+                id="fileInput"
+                type="file"
+                name="cover_img"
+                style="display: none"
+                accept="image/*"
+              />
+            </div>
+
+            <!-- Blog Title -->
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2"
+                >Blog Title</label
+              >
+              <input
+                type="text"
+                name="title"
+                value="<%=inputBack.title%>"
+                class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-md focus:ring-gray-100 focus:border-gray-200 block w-full p-2.5 hover:border-gray-400"
+                placeholder="Enter your blog title"
+              />
+            </div>
+
+            <!-- blog tags -->
+            <div class="mt-4">
+              <label
+                for="tags"
+                class="block text-gray-700 text-sm font-bold mb-2"
+                >Tags</label
+              >
+              <div id="tags-container" class="flex flex-wrap"></div>
+              <div class="flex items-center mt-2">
+                <input
+                  type="text"
+                  id="tags-input"
+                  name="tags"
+                  class="appearance-none bg-gray-50 border border-gray-200 rounded-md py-2.5 px-3 leading-tight focus:ring-gray-100 focus:border-gray-200 flex-grow hover:border-gray-400"
+                  placeholder="Enter tags here"
+                />
+                <button
+                  id="add-tag"
+                  type="button"
+                  class="ml-2 px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
+                >
+                  Add tag
+                </button>
+              </div>
+            </div>
+          </div>
+          <input
+            id="tags"
+            name="final_tags"
+            type="hidden"
+            value="<%=inputBack.final_tags%>"
+          />
+          <hr class="max-w-full mt-5" />
+
+          <!-- primary fields -->
+          <textarea name="blog_body" id="blog_body"> </textarea
+          >
+
+          <!-- including the error & warning messages here  -->
+          <%- include('./partials/error_messages.ejs') %>
+          <!-- Button to Submit the Form -->
+          <button
+            id="submit"
+            type="submit"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-4"
+          >
+            Create Post
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- including footer -->
+    <%- include('./layouts/footer.ejs') %>
+    <script src="/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+
+    <script>
+      const easyMDE = new EasyMDE({
+        element: document.getElementById("blog_body"),
+      });
+    </script>
+    <!-- script for adding add tag buttons && add input types buttons -->
+    <script src="/main.js"></script>
+  </body>
+</html>

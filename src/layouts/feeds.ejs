@@ -1,0 +1,71 @@
+<% if(posts){ %> <% posts.forEach(post => {%>
+
+<!-- User's Post Details -->
+<address class="flex items-center pl-3">
+  <a href="/profile/id">
+    <img
+      class="mr-4 w-9 h-9 rounded-full"
+      src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+      alt="Jese Leos"
+    />
+    <div class="flex flex-wrap">
+      <a
+        href="/profile/id"
+        rel="author"
+        class="text-base font-bold text-gray-900 mr-1"
+      >
+        Jese Leos
+      </a>
+      <p class="text-base text-gray-500">
+        <time
+          pubdate
+          datetime="<%= post.createdAt.toISOString() %>"
+          title="<%= post.createdAt.toDateString() %>"
+        >
+          | <%= post.createdAt.toLocaleDateString(undefined, { year: 'numeric',
+          month: 'long', day: 'numeric' }) %>
+        </time>
+      </p>
+    </div>
+  </a>
+</address>
+<!-- Post Content -->
+<a href="/blog/1" class="flex flex-col md:flex-row items-start bg-white p-2">
+  <!-- Image -->
+  <img
+    class="object-cover w-full md:w-48 rounded-t-md md:rounded-l-md h-60 lg:h-auto"
+    src="<%=post.cover_img%>"
+    alt="<%=post.cover_img%>"
+  />
+
+  <!-- Content Container -->
+
+  <div class="flex flex-col flex-grow md:pl-4">
+    <!-- Content -->
+    <div class="">
+      <h5
+        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+      >
+        <%= post.title %>
+      </h5>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <%= post.blog_body %>
+      </p>
+    </div>
+
+    <!-- KBD Elements -->
+
+    <div class="flex flex-wrap mt-3">
+      <% post.final_tags.forEach(tag => {%>
+      <kbd
+        class="px-2 py-1.5 mb-2 mr-2 text-xs font-semibold text-gray-800 hover:text-white bg-gray-100 border border-gray-200 rounded-md hover:bg-gray-400 hover:border-gray-400"
+      >
+        #<%= tag %>
+      </kbd>
+      <%}); %>
+    </div>
+  </div>
+</a>
+<hr class="max-w-full mt-3 mb-3 leading-10" />
+
+<%}); %> <%}%>

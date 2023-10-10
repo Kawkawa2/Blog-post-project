@@ -1,0 +1,42 @@
+{
+  "name": "authentication_with_passport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "style": "npx tailwindcss -i ./dist/input.css -o ./public/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alpinejs": "^3.13.1",
+    "bcrypt": "^5.1.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.3.1",
+    "easymde": "^2.18.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "file-type": "^18.5.0",
+    "flowbite": "^1.8.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.5.4",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-remember-me": "^0.0.1",
+    "xss": "^1.0.14"
+  },
+  "devDependencies": {
+    "flowbite-typography": "^1.0.3",
+    "tailwindcss": "^3.3.3"
+  }
+}

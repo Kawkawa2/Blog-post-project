@@ -54,3 +54,5 @@ We welcome contributions from the Ark-X Academy community! To contribute, follow
 3. Make your changes and commit them: `git commit -m "Description of your changes"`.
 4. Push to the branch: `git push origin feature-name`.
 5. Create a pull request explaining your changes.
+## Preview
+

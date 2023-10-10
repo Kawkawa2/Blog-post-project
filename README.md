@@ -55,4 +55,17 @@ We welcome contributions from the Ark-X Academy community! To contribute, follow
 4. Push to the branch: `git push origin feature-name`.
 5. Create a pull request explaining your changes.
 ## Preview
+1. Register page:</br> </br>
+   ![Screenshot](./preview/register_page.PNG)
+3. Login page: </br> </br>
+    ![Screenshot](./preview/login_page.PNG)
+5. Blog page: </br> </br>
+    ![Screenshot](./preview/blog_page1.PNG) </br>
+   ![Screenshot](./preview/blog_page2.PNG)
+7. Create blog page: </br> </br>
+    ![Screenshot](./preview/create_post.PNG)
+
+
+
+
 
